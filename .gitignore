@@ -65,3 +65,8 @@ yarn-debug.log*
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+
+# Ignore Test Files
+*html
+/bin/methodst.rb
+/bin/test.rb
