@@ -5,3 +5,4 @@ require 'webdrivers'
 require 'json'
 
 require_relative '../lib/currency-scraper.rb'
+
