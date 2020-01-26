@@ -1,16 +1,13 @@
 #! /usr/bin/env ruby
-require 'nokogiri'
-require 'watir'
-require 'webdrivers'
 require 'json'
-require 'csv'
 require 'date'
-
 require_relative '../lib/scraper.rb'
 require_relative '../config/config.rb'
 
 row = []
+puts 'Obtaining data from the pages, please wait until the browser is close...'
 nokogiris = Scraper.fillnokogiris
+puts 'Data obtained.'
 row.push(Scraper.convert_number(nokogiris[0].css('div#dat_divisas div p')[1].text))
 row.push(Scraper.convert_number(nokogiris[0].css('div#dat_divisas div p')[2].text))
 row.push(Scraper.convert_number(nokogiris[1].css('table.tbl-info-financiera tbody tr td')[15].text.match(/\d+\.\d+/).to_s))
@@ -30,6 +27,11 @@ row.push(Scraper.convert_number(banbajio_json.divisas[7].compra))
 row.push(Scraper.convert_number(banbajio_json.divisas[7].venta))
 row.unshift(Time.now.strftime('%d-%m-%Y %H:%M:%S'))
 Scraper.write_csv(row)
+puts 'This is the data of the value of the USD in MXN'
 Config.csv_header.each_with_index do |elem, i|
-  puts "#{elem}:    \t#{row[i]}"
+  if i.zero?
+    puts "#{elem}:    \t#{row[i]}"
+  else
+    puts "#{elem}:    \t$#{format('%<price>.2f', price: row[i])} MXN"
+  end
 end

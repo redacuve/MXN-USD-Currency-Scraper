@@ -68,5 +68,4 @@ yarn-debug.log*
 
 # Ignore Test Files
 *html
-/bin/methodst.rb
-/bin/test.rb
+*csv

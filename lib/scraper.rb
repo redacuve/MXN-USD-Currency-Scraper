@@ -2,6 +2,7 @@
 require 'nokogiri'
 require 'watir'
 require 'webdrivers'
+require 'csv'
 require_relative '../config/config.rb'
 
 module Scraper
