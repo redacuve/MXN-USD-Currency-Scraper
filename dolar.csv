@@ -1,8 +1,0 @@
-Banamex,https://www.banamex.com/economia-finanzas/es/mercado-de-divisas/index.html,"Watir::Wait.until { browser.td(:class => [""compra"",""MXNUS""]).exists? }"
-Bancomer,https://bbv.infosel.com/bancomerindicators/indexv8.aspx,"Watir::Wait.until { browser.table(:class => [""table"", ""tbl-info-financiera""]).exists? }"
-Banco_Azteca,https://web.bancoazteca.com.mx/eBanking/tcDivisas.do,"Watir::Wait.until { browser.div(:class => [""box""]).exists? }"
-Scotiabank,https://www.scotiabank.com.mx/Empresas-y-Gobierno/Otros-Productos/Productos/tipo-de-cambio.aspx,"Watir::Wait.until { browser.div(:class => [""ulListContainer""]).exists? }"
-Banorte,https://www.banorte.com/wps/portal/banorte/Home/indicadores/dolares-y-divisas,"Watir::Wait.until { browser.div(:id => ""indicadores_financieros_wrapper"").exists? }"
-Inbursa,https://www.inbursa.com/portal/,"Watir::Wait.until { browser.div(:id => ""Divisas"").exists?}"
-Banregio,https://www.banregio.com/divisas.php,"Watir::Wait.until { browser.table(:class => [""t-divisas""]).exists? }"
-Banbajio,https://www.bb.com.mx/webcenter/portal/BanBajio/home?,"Watir::Wait.until { browser.input(:id => ""jsonDivisas"").exists? }"

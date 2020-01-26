@@ -5,7 +5,7 @@ require 'webdrivers'
 require_relative '../config/config.rb'
 
 module Scraper
-  def self.obtain_nokogiri(browser,site, code)
+  def self.obtain_nokogiri(browser, site, code)
     if (code.start_with? 'Watir::Wait.until { browser.') && (code.end_with? '.exists? }')
       browser.goto site
       browser.refresh
@@ -23,10 +23,21 @@ module Scraper
   def self.fillnokogiris
     browser = Watir::Browser.new
     nokogiris = []
-    (0...Config.sites.length).each_with_index { |i| 
-      nokogiris.push(obtain_nokogiri(browser,Config.sites.values[i], Config.codes.values[i]))
-    }
+    (0...Config.sites.length).each do |i|
+      nokogiris.push(obtain_nokogiri(browser, Config.sites.values[i], Config.codes.values[i]))
+    end
     nokogiris
+  end
+
+  def self.write_csv(row)
+    if File.exist?(Config.path)
+      CSV.open(Config.path, 'a') { |csv| csv << row }
+    else
+      CSV.open(Config.path, 'w') do |csv|
+        csv << Config.csv_header
+        csv << row
+      end
+    end
   end
 end
 # rubocop:enable Security/Eval

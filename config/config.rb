@@ -3,6 +3,28 @@
 module Config
   # This is the path where the .csv file is stored
   @path = 'dolar.csv'
+
+  # This is the .CSV header
+  @csv_header =
+    %w[
+      Date
+      Banamex_Buy
+      Banamex_Sell
+      Bancomer_Buy
+      Bancomer_Sell
+      Banco_Azteca_Buy
+      Banco_Azteca_Sell
+      Scotiabank_Buy
+      Scotiabank_Sell
+      Banorte_Buy
+      Banorte_Sell
+      Inbursa_Buy
+      Inbursa_Sell
+      Banregio_Buy
+      Banregio_Sell
+      Banbajio_Buy
+      Banbajio_Sell
+    ]
   # This are the sites of each bank.
   @sites =
     {
@@ -40,12 +62,13 @@ module Config
       Banregio
       Banbajio
     ]
-         
+
   # This creates an reader access for the variables in the module.
   class << self
     attr_reader :sites
     attr_reader :codes
     attr_reader :names
     attr_reader :path
+    attr_reader :csv_header
   end
 end
