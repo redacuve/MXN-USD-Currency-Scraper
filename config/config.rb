@@ -1,6 +1,8 @@
 # This is the configuration file of the currency scrapper modify with care the next strings.
 
 module Config
+  # This is the path where the .csv file is stored
+  @path = 'dolar.csv'
   # This are the sites of each bank.
   @sites =
     {
@@ -22,13 +24,28 @@ module Config
       bancoazteca_code: 'Watir::Wait.until { browser.div(:class => ["box"]).exists? }',
       scotiabank_code: 'Watir::Wait.until { browser.div(:class => ["ulListContainer"]).exists? }',
       banorte_code: 'Watir::Wait.until { browser.div(:id => "indicadores_financieros_wrapper").exists? }',
-      inbursa_code: 'Watir::Wait.until { browser.div(:id => "Divisas").exists?}',
+      inbursa_code: 'Watir::Wait.until { browser.div(:id => "Divisas").exists? }',
       banregio_code: 'Watir::Wait.until { browser.table(:class => ["t-divisas"]).exists? }',
       banbajio_code: 'Watir::Wait.until { browser.input(:id => "jsonDivisas").exists? }'
     }
+
+  @names =
+    %w[
+      Banamex
+      Bancomer
+      Banco_Azteca
+      Scotiabank
+      Banorte
+      Inbursa
+      Banregio
+      Banbajio
+    ]
+         
   # This creates an reader access for the variables in the module.
   class << self
     attr_reader :sites
     attr_reader :codes
+    attr_reader :names
+    attr_reader :path
   end
 end
