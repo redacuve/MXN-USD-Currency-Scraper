@@ -13,7 +13,7 @@ module Scraper
       eval(code)
       Nokogiri::HTML(browser.html)
     else
-      puts 'Wrong Code Format String'
+      'Wrong Code Format String'
     end
   end
 
@@ -30,14 +30,18 @@ module Scraper
     nokogiris
   end
 
-  def self.write_csv(row)
-    if File.exist?(Config.path)
-      CSV.open(Config.path, 'a') { |csv| csv << row }
-    else
-      CSV.open(Config.path, 'w') do |csv|
-        csv << Config.csv_header
-        csv << row
+  def self.write_csv(row = nil)
+    if row.is_a? Array
+      if File.exist?(Config.path)
+        CSV.open(Config.path, 'a') { |csv| csv << row }
+      else
+        CSV.open(Config.path, 'w') do |csv|
+          csv << Config.csv_header
+          csv << row
+        end
       end
+    else
+      'No row given'
     end
   end
 end
