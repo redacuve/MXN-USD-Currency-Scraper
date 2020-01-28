@@ -62,6 +62,7 @@ Project written in Ruby Languaje.
   Used Gems:
   * [Nokogiri](https://github.com/sparklemotion/nokogiri)
   * [Watir](https://github.com/watir/watir)
+  * [Webdrivers](https://github.com/titusfortner/webdrivers)
 
 <!-- REQUIREMENTS -->
 ## Requirements
@@ -74,6 +75,10 @@ Project written in Ruby Languaje.
   ```
   gem install watir
   ```
+* Webdriveres 4.0 or later (https://rubygems.org/gems/webdrivers/)
+  ```
+  gem install webdrivers
+  ```
 Optional:<br>
 * Google Chrome 72.0.3626 or later (https://www.google.com/intl/en/chrome/productivity/)
 
@@ -82,23 +87,27 @@ Optional:<br>
 
 ## Getting Started
 
-0. Install ruby [https://www.ruby-lang.org/en/documentation/installation/]
+1. Install ruby [https://www.ruby-lang.org/en/documentation/installation/]
+
+2. Install 
 
 To get a local copy:<br>
-1. Clone or fork the <a href="https://github.com/redacuve/MXN-USD-Currency-Scraper">repo</a> [git@github.com:redacuve/MXN-USD-Currency-Scraper.git]
+3. Clone or fork the <a href="https://github.com/redacuve/MXN-USD-Currency-Scraper">repo</a> [git@github.com:redacuve/MXN-USD-Currency-Scraper.git]
 
 To download:<br>
-1. Download the <a href="https://github.com/redacuve/MXN-USD-Currency-Scraper">repo</a> [https://github.com/redacuve/MXN-USD-Currency-Scraper/archive/master.zip]<br>
+3. Download the <a href="https://github.com/redacuve/MXN-USD-Currency-Scraper">repo</a> [https://github.com/redacuve/MXN-USD-Currency-Scraper/archive/master.zip]<br>
 2. Unzip the zip file<br>
 
-3. Install the gems:
-  nokogiri and watir<br>
+4. Install the gems:
+  nokogiri, watir and webdrivers<br>
   ```
   gem install nokogiri
   
   gem install watir
+  
+  gem install webdrivers
   ```
-4. Go to directory of this project. this project looks like:
+5. Go to directory of this project. this project looks like:
   ``` 
   MXN-USD-Currency-Scraper
   |__bin
@@ -113,15 +122,15 @@ To download:<br>
   |__LICENSE
   |__README.md
   ```
-  5. Inside this project yo need to type
+  6. Inside this project you need to type:
   ```
   ruby bin/main.rb
   ```
-  6. Then the program it's going to start and open one browser (chrome by default, but it isnt installed the default browser in your system)
+  7. Then the program it's going to start and open one browser (chrome by default, but it isnt installed the default browser in your system).
   
-  7. The program is going to show you the price of the USD in MXN and save it on the .csv (by default dolar.csv on the directory)
+  8. The program is going to show you the price of the USD in MXN and save it on the .csv (by default dolar.csv on the directory).
   
-  8.- You can change some of the behavior of the program modifying the config.rb file. 
+  9.- You can change some of the behavior of the program modifying the config.rb file. 
 
 <!-- MODIFYING -->
 ## Configuration
