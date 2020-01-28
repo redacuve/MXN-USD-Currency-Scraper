@@ -63,24 +63,31 @@ Project written in Ruby Languaje.
   * [Nokogiri](https://github.com/sparklemotion/nokogiri)
   * [Watir](https://github.com/watir/watir)
   * [Webdrivers](https://github.com/titusfortner/webdrivers)
+  * [Bundler](https://github.com/rubygems/bundler)
 
 <!-- REQUIREMENTS -->
 ## Requirements
-
-* Nokogiri 1.6.0 or later (https://rubygems.org/gems/nokogiri)
+* Bundler 2.1.0 or later (https://rubygems.org/gems/bundler) 
   ```
   gem install nokogiri
   ```
-* Watir 6.14 or later (https://rubygems.org/gems/watir)
-  ```
-  gem install watir
-  ```
-* Webdriveres 4.0 or later (https://rubygems.org/gems/webdrivers/)
-  ```
-  gem install webdrivers
-  ```
-Optional:<br>
+  Optional:<br>
 * Google Chrome 72.0.3626 or later (https://www.google.com/intl/en/chrome/productivity/)
+<br>
+* Only If you want to install this manually: (see [Getting Started](#getting-started) #4)
+
+  * Nokogiri 1.6.0 or later (https://rubygems.org/gems/nokogiri)
+    ```
+    gem install nokogiri
+    ```
+  * Watir 6.14 or later (https://rubygems.org/gems/watir)
+    ```
+    gem install watir
+    ```
+  * Webdrivers 4.0 or later (https://rubygems.org/gems/webdrivers/)
+    ```
+    gem install webdrivers
+     ```
 
 
 <!-- GETTING STARTED -->
@@ -89,17 +96,26 @@ Optional:<br>
 
 1. Install ruby [https://www.ruby-lang.org/en/documentation/installation/]
 
-2. Install 
-
 To get a local copy:<br>
-3. Clone or fork the <a href="https://github.com/redacuve/MXN-USD-Currency-Scraper">repo</a> [git@github.com:redacuve/MXN-USD-Currency-Scraper.git]
+2. Clone or fork the <a href="https://github.com/redacuve/MXN-USD-Currency-Scraper">repo</a> [git@github.com:redacuve/MXN-USD-Currency-Scraper.git]
 
 To download:<br>
-3. Download the <a href="https://github.com/redacuve/MXN-USD-Currency-Scraper">repo</a> [https://github.com/redacuve/MXN-USD-Currency-Scraper/archive/master.zip]<br>
-2. Unzip the zip file<br>
+2. Download the <a href="https://github.com/redacuve/MXN-USD-Currency-Scraper">repo</a> [https://github.com/redacuve/MXN-USD-Currency-Scraper/archive/master.zip]<br>
+3. Unzip the zip file<br>
 
-4. Install the gems:
-  nokogiri, watir and webdrivers<br>
+4. Install the dependencies:
+  This project is provided with a Gemfile with the 3 dependencies inside, you need to install first the gem bundler<br>
+  ```
+  gem install bundler
+  ```
+  then you can add the gems with the command:
+  ```
+  bundle install
+  ```
+  now the tree gems are installed in your system.<br>
+  You can go to the next step #5.<br>
+  <br>
+  Note*: If you want to install the gems manually instead of using the bundler and the gem file you can do this:
   ```
   gem install nokogiri
   
@@ -128,7 +144,7 @@ To download:<br>
   ```
   7. Then the program it's going to start and open one browser (chrome by default, but it isnt installed the default browser in your system).
   
-  8. The program is going to show you the price of the USD in MXN and save it on the .csv (by default dolar.csv on the directory).
+  8. The program is going to show you the price of the USD in MXN and save it on the .csv (by default dolar.csv on the directory). *note: this project requires the use of 'CSV' Class, but this is installed by default with ruby, no gem needed.
   
   9.- You can change some of the behavior of the program modifying the config.rb file. 
 
