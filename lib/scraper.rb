@@ -1,4 +1,4 @@
-# rubocop:disable Security/Eval
+# rubocop:disable Security/Eval,Style/RescueStandardError
 require 'nokogiri'
 require 'watir'
 require 'webdrivers'
@@ -8,10 +8,15 @@ require_relative '../config/config.rb'
 module Scraper
   def self.obtain_nokogiri(browser, site, code)
     if (code.start_with? 'Watir::Wait.until { browser.') && (code.end_with? '.exists? }')
-      browser.goto site
-      browser.refresh
-      eval(code)
-      Nokogiri::HTML(browser.html)
+      begin
+        browser.goto site
+        browser.refresh
+        eval(code)
+        Nokogiri::HTML(browser.html)
+      rescue
+        puts 'Check your internet connection'
+        'Bad connection'
+      end
     else
       'Wrong Code Format String'
     end
@@ -36,14 +41,21 @@ module Scraper
       if File.exist?(Config.path)
         CSV.open(Config.path, 'a') { |csv| csv << row }
       else
+        csv_header = []
+        csv_header.push('Date')
+        Config.names.each do |name|
+          csv_header.push("#{name} Buy:")
+          csv_header.push("#{name} Sell:")
+        end
         CSV.open(Config.path, 'w') do |csv|
-          csv << Config.csv_header
+          csv << csv_header
           csv << row
         end
       end
+      puts "Data added to the file #{Config.path}"
     else
       'No row given'
     end
   end
 end
-# rubocop:enable Security/Eval
+# rubocop:enable Security/Eval,Style/RescueStandardError

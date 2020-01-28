@@ -4,27 +4,19 @@ module Config
   # This is the path where the .csv file is stored
   @path = 'dolar.csv'
 
-  # This is the .CSV header
-  @csv_header =
+  # This are the names of each bank
+  @names =
     %w[
-      Date
-      Banamex_Buy
-      Banamex_Sell
-      Bancomer_Buy
-      Bancomer_Sell
-      Banco_Azteca_Buy
-      Banco_Azteca_Sell
-      Scotiabank_Buy
-      Scotiabank_Sell
-      Banorte_Buy
-      Banorte_Sell
-      Inbursa_Buy
-      Inbursa_Sell
-      Banregio_Buy
-      Banregio_Sell
-      Banbajio_Buy
-      Banbajio_Sell
+      Banamex
+      Bancomer
+      Banco_Azteca
+      Scotiabank
+      Banorte
+      Inbursa
+      Banregio
+      Banbajio
     ]
+
   # This are the sites of each bank.
   @sites =
     {
@@ -50,18 +42,6 @@ module Config
       banregio_code: 'Watir::Wait.until { browser.table(:class => ["t-divisas"]).exists? }',
       banbajio_code: 'Watir::Wait.until { browser.input(:id => "jsonDivisas").exists? }'
     }
-
-  @names =
-    %w[
-      Banamex
-      Bancomer
-      Banco_Azteca
-      Scotiabank
-      Banorte
-      Inbursa
-      Banregio
-      Banbajio
-    ]
 
   # This creates an reader access for the variables in the module.
   class << self
