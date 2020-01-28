@@ -25,6 +25,7 @@ module Scraper
     browser = Watir::Browser.new
     nokogiris = []
     (0...Config.sites.length).each do |i|
+      puts "Going to #{Config.sites.values[i]}"
       nokogiris.push(obtain_nokogiri(browser, Config.sites.values[i], Config.codes.values[i]))
     end
     nokogiris
