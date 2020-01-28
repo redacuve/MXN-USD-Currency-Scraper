@@ -67,29 +67,27 @@ Project written in Ruby Languaje.
 
 <!-- REQUIREMENTS -->
 ## Requirements
-* Bundler 2.1.0 or later (https://rubygems.org/gems/bundler) 
+  * Bundler 2.1.0 or later (https://rubygems.org/gems/bundler) 
   ```
   gem install nokogiri
   ```
   Optional:<br>
-* Google Chrome 72.0.3626 or later (https://www.google.com/intl/en/chrome/productivity/)
-<br>
-* Only If you want to install this manually: (see [Getting Started](#getting-started) #4)
-
-  * Nokogiri 1.6.0 or later (https://rubygems.org/gems/nokogiri)
-    ```
-    gem install nokogiri
-    ```
-  * Watir 6.14 or later (https://rubygems.org/gems/watir)
-    ```
-    gem install watir
-    ```
-  * Webdrivers 4.0 or later (https://rubygems.org/gems/webdrivers/)
-    ```
-    gem install webdrivers
-     ```
-
-
+  * Google Chrome 72.0.3626 or later (https://www.google.com/intl/en/chrome/productivity/)
+  <br>
+  
+  * Only If you want to install this manually: (see [Getting Started](#getting-started) #4)
+    * Nokogiri 1.6.0 or later (https://rubygems.org/gems/nokogiri)
+      ```
+      gem install nokogiri
+      ```
+    * Watir 6.14 or later (https://rubygems.org/gems/watir)
+      ```
+      gem install watir
+      ```
+    * Webdrivers 4.0 or later (https://rubygems.org/gems/webdrivers/)
+      ```
+      gem install webdrivers
+      ```
 <!-- GETTING STARTED -->
 
 ## Getting Started
@@ -97,31 +95,33 @@ Project written in Ruby Languaje.
 1. Install ruby [https://www.ruby-lang.org/en/documentation/installation/]
 
 To get a local copy:<br>
+
 2. Clone or fork the <a href="https://github.com/redacuve/MXN-USD-Currency-Scraper">repo</a> [git@github.com:redacuve/MXN-USD-Currency-Scraper.git]
 
 To download:<br>
+
 2. Download the <a href="https://github.com/redacuve/MXN-USD-Currency-Scraper">repo</a> [https://github.com/redacuve/MXN-USD-Currency-Scraper/archive/master.zip]<br>
 3. Unzip the zip file<br>
 
 4. Install the dependencies:
   This project is provided with a Gemfile with the 3 dependencies inside, you need to install first the gem bundler<br>
-  ```
-  gem install bundler
-  ```
-  then you can add the gems with the command:
-  ```
-  bundle install
-  ```
-  now the tree gems are installed in your system.<br>
-  You can go to the next step #5.<br>
-  <br>
+    ```
+    gem install bundler
+    ```
+    then you can add the gems with the command:
+    ```
+    bundle install
+    ```
+    now the tree gems are installed in your system.<br>
+    You can go to the next step #5.<br>
+    <br>
   Note*: If you want to install the gems manually instead of using the bundler and the gem file you can do this:
   ```
-  gem install nokogiri
-  
-  gem install watir
-  
-  gem install webdrivers
+      gem install nokogiri
+      
+      gem install watir
+      
+      gem install webdrivers
   ```
 5. Go to directory of this project. this project looks like:
   ``` 
