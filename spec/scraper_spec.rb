@@ -34,8 +34,8 @@ describe Scraper do
     end
   end
 
-  describe '#self.fillnokogiris' do
-    it 'return an array filled with nokogiris' do
+  describe '#fillnokogiris' do
+    it 'return an array with filled with nokogiris' do
       expect(Scraper.fillnokogiris.class).to eql(Array)
     end
   end
