@@ -7,12 +7,6 @@ describe Config do
     end
   end
 
-  describe 'csv_header' do
-    it 'csv_header needs to be an array of words' do
-      expect(Config.csv_header.class).to eql(Array)
-    end
-  end
-
   describe 'sites' do
     it 'sites needs to be a Hash' do
       expect(Config.sites.class).to eql(Hash)

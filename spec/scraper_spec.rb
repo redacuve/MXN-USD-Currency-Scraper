@@ -41,10 +41,6 @@ describe Scraper do
   end
 
   describe '#write_csv' do
-    it 'Write in the csv if a row is given' do
-      expect(Scraper.write_csv([1, 2, 3]).class).to eql(CSV)
-    end
-
     it 'Return a message is a row is not an array' do
       expect(Scraper.write_csv('X')).to eql('No row given')
     end
