@@ -48,7 +48,6 @@ The program work with the next Banks in México:
       * Banco_Azteca
       * Scotiabank
       * Banorte
-      * Inbursa
       * Banregio
       * Banbajio
 ```

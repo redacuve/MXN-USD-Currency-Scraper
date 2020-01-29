@@ -36,20 +36,15 @@ puts "#{Config.names[4]} Buy:    \t$#{format('%<price>.2f', price: row[row.size 
 row.push(Scraper.convert_number(nokogiris[4].css('table#tablaDolar tbody tr td')[2].text.match(/\d+\.\d+/).to_s))
 puts "#{Config.names[4]} Sell:    \t$#{format('%<price>.2f', price: row[row.size - 1])} MXN"
 exit if nokogiris[5].is_a? String
-row.push(Scraper.convert_number(nokogiris[5].css('div#Divisas td.text-center')[0].text.match(/\d+\.\d+/).to_s))
+row.push(Scraper.convert_number(nokogiris[5].css('table.t-divisas tbody tr')[0].css('td b')[1].text.match(/\d+\.\d+/).to_s))
 puts "#{Config.names[5]} Buy:    \t$#{format('%<price>.2f', price: row[row.size - 1])} MXN"
-row.push(Scraper.convert_number(nokogiris[5].css('div#Divisas td.text-center')[1].text.match(/\d+\.\d+/).to_s))
+row.push(Scraper.convert_number(nokogiris[5].css('table.t-divisas tbody tr')[1].css('td b')[1].text.match(/\d+\.\d+/).to_s))
 puts "#{Config.names[5]} Sell:    \t$#{format('%<price>.2f', price: row[row.size - 1])} MXN"
-exit if nokogiris[6].is_a? String
-row.push(Scraper.convert_number(nokogiris[6].css('table.t-divisas tbody tr')[0].css('td b')[1].text.match(/\d+\.\d+/).to_s))
-puts "#{Config.names[6]} Buy:    \t$#{format('%<price>.2f', price: row[row.size - 1])} MXN"
-row.push(Scraper.convert_number(nokogiris[6].css('table.t-divisas tbody tr')[1].css('td b')[1].text.match(/\d+\.\d+/).to_s))
-puts "#{Config.names[6]} Sell:    \t$#{format('%<price>.2f', price: row[row.size - 1])} MXN"
 exit if nokogiris[7].is_a? String
-banbajio_json = JSON.parse(nokogiris[7].css('input#jsonDivisas')[0].values[3], object_class: OpenStruct)
+banbajio_json = JSON.parse(nokogiris[6].css('input#jsonDivisas')[0].values[3], object_class: OpenStruct)
 row.push(Scraper.convert_number(banbajio_json.divisas[7].compra))
-puts "#{Config.names[7]} Buy:    \t$#{format('%<price>.2f', price: row[row.size - 1])} MXN"
+puts "#{Config.names[6]} Buy:    \t$#{format('%<price>.2f', price: row[row.size - 1])} MXN"
 row.push(Scraper.convert_number(banbajio_json.divisas[7].venta))
-puts "#{Config.names[7]} Sell:    \t$#{format('%<price>.2f', price: row[row.size - 1])} MXN"
+puts "#{Config.names[6]} Sell:    \t$#{format('%<price>.2f', price: row[row.size - 1])} MXN"
 row.unshift(Time.now.strftime('%d-%m-%Y %H:%M:%S'))
 Scraper.write_csv(row)

@@ -12,7 +12,6 @@ module Config
       Banco_Azteca
       Scotiabank
       Banorte
-      Inbursa
       Banregio
       Banbajio
     ]
@@ -25,7 +24,6 @@ module Config
       bancoazteca_site: 'https://web.bancoazteca.com.mx/eBanking/tcDivisas.do',
       scotiabank_site: 'https://www.scotiabank.com.mx/Empresas-y-Gobierno/Otros-Productos/Productos/tipo-de-cambio.aspx',
       banorte_site: 'https://www.banorte.com/wps/portal/banorte/Home/indicadores/dolares-y-divisas',
-      inbursa_site: 'https://www.inbursa.com/portal/',
       banregio_site: 'https://www.banregio.com/divisas.php',
       banbajio_site: 'https://www.bb.com.mx/webcenter/portal/BanBajio/home?'
     }
@@ -38,7 +36,6 @@ module Config
       bancoazteca_code: 'Watir::Wait.until { browser.div(:class => ["box"]).exists? }',
       scotiabank_code: 'Watir::Wait.until { browser.div(:class => ["ulListContainer"]).exists? }',
       banorte_code: 'Watir::Wait.until { browser.div(:id => "indicadores_financieros_wrapper").exists? }',
-      inbursa_code: 'Watir::Wait.until { browser.div(:id => "Divisas").exists? }',
       banregio_code: 'Watir::Wait.until { browser.table(:class => ["t-divisas"]).exists? }',
       banbajio_code: 'Watir::Wait.until { browser.input(:id => "jsonDivisas").exists? }'
     }
